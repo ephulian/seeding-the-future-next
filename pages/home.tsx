@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';
@@ -10,8 +9,6 @@ export default function Home() {
 	const [joinButton, setDisabled] = useState(homeStyles['disabled']);
 	const [error, setError] = useState('');
 	const [answer, setAnswer] = useState('');
-
-	const router = useRouter();
 
 	// let navigate = useNavigate();
 	// let dispatch = useDispatch();
@@ -32,10 +29,10 @@ export default function Home() {
 	};
 
 	const startQuestionaire = () => {
-		if (joinButton === homeStyles['disabled']) {
+		if (joinButton === 'disabled') {
 			setError('Please accept the Privacy Notice to continue!');
 		} else {
-			router.push('questions/1');
+			// navigate('/q1');
 		}
 	};
 
@@ -75,8 +72,8 @@ export default function Home() {
 					</div>
 				</div>
 				<div className={homeStyles['button-container']}>
-					<div className={homeStyles['error']}>{error}</div>
-					<button className={joinButton} onClick={() => startQuestionaire()}>
+					<div className='error'>{error}</div>
+					<button className={`${joinButton}`} onClick={() => startQuestionaire()}>
 						<h3>Join</h3>
 					</button>
 					<div className={homeStyles['privacy-notice']}>
@@ -95,12 +92,12 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div className={`${homeStyles['privacy-notice-container']} ${privacyNoticeState}`}>
-				<div className={homeStyles['privacy-notice-full']}>
+			<div className={`privacy-notice-container ${privacyNoticeState}`}>
+				<div className='privacy-notice-full'>
 					<br />
-					<div className={homeStyles['privacy-notice__title-container']}>
-						<h3 className={homeStyles['privacy-notice__title']}>Privacy Notice</h3>
-						<div onClick={() => togglePrivacyNotice()} className={homeStyles['cross']}></div>
+					<div className='privacy-notice__title-container'>
+						<h3 className='privacy-notice__title'>Privacy Notice</h3>
+						<div onClick={() => togglePrivacyNotice()} className='cross'></div>
 					</div>
 					<br />
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur modi, sint assumenda

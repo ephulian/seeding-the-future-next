@@ -1,0 +1,50 @@
+@import './root/Variables.scss';
+
+.question-content {
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	max-width: 450px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.question-container {
+		padding: 0 1rem;
+		margin-top: 5rem;
+	}
+
+	.answer-container {
+		width: 100%;
+		padding: 0 1rem;
+		.answer {
+			font-size: $fontsize_4;
+			padding: 0.25rem;
+			border: 2px solid $clr_font_gray;
+			width: 100%;
+
+			&::placeholder {
+				color: $clr_font_gray;
+			}
+		}
+
+		.single-option {
+			padding-top: 1.25rem;
+		}
+	}
+
+	.button-container {
+		display: flex;
+		height: 25%;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 1rem;
+
+		.error {
+			color: $clr_font_red;
+			height: 27px;
+			// position: absolute;
+		}
+	}
+}

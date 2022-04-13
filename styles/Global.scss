@@ -1,0 +1,101 @@
+@import './root/reset.scss';
+@import './root/variables.scss';
+
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+
+	#__next {
+		width: 100%;
+		height: 100%;
+		background-color: white;
+
+		main {
+			height: 100%;
+		}
+
+		.section-center {
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+	}
+}
+
+.nav-links {
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+}
+
+h1 {
+	font-size: $fontsize_1;
+}
+
+h2 {
+	font-size: $fontsize_2;
+}
+
+h3 {
+	font-size: $fontsize_3;
+}
+
+h4 {
+	font-size: $fontsize_4;
+}
+
+h5 {
+	font-size: $fontsize_5;
+}
+
+button {
+	padding: 0.5rem 5rem;
+	border-radius: 4px;
+	font-size: 1rem;
+	color: $clr_font_white;
+	background-color: $clr_secondary;
+	max-width: 275px;
+	width: 100%;
+	text-align: center;
+}
+
+.disabled {
+	background-color: $clr_unactive;
+}
+
+input[type='checkbox'] {
+	border: 2px solid $clr_unactive;
+	height: 18px;
+	width: 18px;
+	border-radius: 5px;
+
+	&:checked {
+		background-color: $clr_active;
+		// padding: 15px;
+	}
+}
+
+input[type='radio'] {
+	border: 2px solid $clr_unactive;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	margin-bottom: -2px;
+	margin-right: 5px;
+
+	&:checked {
+		background-color: $clr_active;
+	}
+}
+
+a {
+	text-decoration: underline;
+}

@@ -1,0 +1,120 @@
+@import './root/Variables.scss';
+
+.home {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	z-index: 1;
+	// position: relative;
+
+	.card {
+		background: $clr_gradient;
+		height: 75%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 3rem;
+		color: $clr_font_white;
+		gap: 5rem;
+
+		.logo-container {
+			background-color: $clr_font_white;
+			color: $clr_font_gray;
+			height: 85px;
+			width: 85px;
+			border-radius: 25px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.title {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			align-items: center;
+
+			h1 {
+				max-width: 15ch;
+			}
+		}
+	}
+
+	.button-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// justify-content: flex-end;
+		justify-content: center;
+		// margin-bottom: 100px;
+		gap: 1rem;
+		background-color: $clr_font_white;
+		height: 25%;
+
+		.error {
+			color: $clr_font_red;
+			height: 27px;
+		}
+
+		.privacy-notice {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.5rem;
+		}
+	}
+}
+
+.disabled {
+	background-color: $clr_unactive;
+}
+
+.privacy-notice-container {
+	position: absolute;
+	height: 100vh;
+	width: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	padding: 1rem;
+	background-color: $clr_unactive_transparent;
+
+	.privacy-notice-full {
+		max-height: 70%;
+		overflow: scroll;
+		background-color: $clr_font_white;
+		padding: 1rem;
+		border-radius: 15px;
+
+		.privacy-notice__title-container {
+			display: flex;
+			justify-content: space-between;
+
+			.cross::before {
+				content: '\00d7';
+				color: $clr_font_black;
+				font-weight: 100;
+				font-family: Arial, sans-serif;
+				font-size: 26px;
+				// display: flex;
+				justify-content: flex-end;
+				height: 15px;
+				width: 15px;
+			}
+		}
+	}
+}
+
+.closed {
+	z-index: -1;
+}
+
+.open {
+	z-index: 1;
+}
