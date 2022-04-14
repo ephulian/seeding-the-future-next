@@ -8,7 +8,7 @@ export default function Home() {
 	const [privacyNoticeState, setPrivacyNoticeState] = useState(homeStyles['closed']);
 	const [joinButton, setDisabled] = useState(homeStyles['disabled']);
 	const [error, setError] = useState('');
-	const [answer, setAnswer] = useState('');
+	// const [answer, setAnswer] = useState('');
 
 	// let navigate = useNavigate();
 	// let dispatch = useDispatch();
