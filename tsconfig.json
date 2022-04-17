@@ -20,7 +20,9 @@
 		"**/*.ts",
 		"**/*.tsx",
 		"pages/api/firestore/questions.js",
-		"pages/api/firestore/questions.js"
+		"pages/api/firestore/questions.js",
+		"pages/api/open-ai/index.js",
+		"pages/api/config/openai-config.js"
 	],
 	"exclude": ["node_modules"]
 }

@@ -7,17 +7,24 @@ import { useEffect, useState } from 'react';
 
 export default function QuestionRoute({ questions }: { questions: any }) {
 	const [state, setState] = useState(questions);
+	// const [nextPage, setNextPage] = useState('');
 	const router = useRouter();
 	const { id } = router.query;
 	const routeId = parseInt(id);
 
 	const store = useSelector((store) => store);
 	// console.log(store.userInput.answers);
+	let nextPage: string;
 
 	const keys = Object.keys(questions);
 	// console.log(keys.length);
 
-	const nextPage = routeId < keys.length ? `/questions/${routeId + 1}` : `/finish`;
+	const isLast = routeId >= keys.length;
+	if (isLast) {
+		nextPage = '/finish';
+	} else {
+		nextPage = `/questions/${routeId + 1}`;
+	}
 
 	useEffect(() => {
 		setState(questions);

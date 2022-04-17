@@ -6,13 +6,7 @@ export default async function handler(req, res) {
 
 	const data = await getDoc(questionsRef);
 	const questions = await data.data();
-	// console.log(questions.data());
-	// const data = {};
-	// questions.forEach((doc) => {
-	// 	data[doc.id] = doc.data();
-	// });
 
-	// res.status(200).json({ ...data });
 	res.status(200).json({ ...questions });
 }
 // import { initializeApp } from 'firebase/app';
