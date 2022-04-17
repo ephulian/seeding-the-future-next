@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';
 // import { openai } from '../OpenAI/OpenAi-config';
 import homeStyles from '../styles/Home.module.scss';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { db } from './api/firestore';
 
 export default function Home() {
 	const [privacyNoticeState, setPrivacyNoticeState] = useState(homeStyles['closed']);
 	const [joinButton, setDisabled] = useState(homeStyles['disabled']);
 	const [error, setError] = useState('');
+	const [questions, setQuestions] = useState<any>('');
+
+	const questionsRef = collection(db, 'questions');
+
+	const getQuestions = () => {
+		onSnapshot(questionsRef, (snapshot) => {
+			const questions = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+			setQuestions(questions);
+		});
+	};
+
+	console.log(questions);
+
 	// const [answer, setAnswer] = useState('');
 
 	// let navigate = useNavigate();
@@ -55,6 +70,10 @@ export default function Home() {
 	// 			setAnswer(value);
 	// 		});
 	// };
+
+	useEffect(() => {
+		getQuestions();
+	}, []);
 
 	return (
 		<section className='section-center'>

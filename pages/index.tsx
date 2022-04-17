@@ -1,20 +1,27 @@
+import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addQuestions } from '../redux/questionsSlice';
 // import { useDispatch } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';
 // import { openai } from '../OpenAI/OpenAi-config';
 import homeStyles from '../styles/Home.module.scss';
+import { server } from './api/config';
 
-export default function Home() {
+export default function Home({ questions }: { questions: any }) {
 	const [privacyNoticeState, setPrivacyNoticeState] = useState(homeStyles['closed']);
 	const [joinButton, setDisabled] = useState(homeStyles['disabled']);
 	const [error, setError] = useState('');
-	const [answer, setAnswer] = useState('');
+	// const [questionsList, setQuestions] = useState({});
+	// const [answer, setAnswer] = useState('');
 
 	const router = useRouter();
+	// console.log(questions.questions);
 
 	// let navigate = useNavigate();
-	// let dispatch = useDispatch();
+	let dispatch = useDispatch();
+	// dispatch(addQuestions(questions));
 
 	const togglePrivacyNotice = () => {
 		privacyNoticeState === homeStyles['closed']
@@ -58,6 +65,13 @@ export default function Home() {
 	// 			setAnswer(value);
 	// 		});
 	// };
+
+	const store = useSelector((state) => state);
+	console.log(store);
+
+	// useEffect(() => {
+	// 	dispatch(addQuestions(questions));
+	// }, []);
 
 	return (
 		<section className='section-center'>
@@ -131,3 +145,15 @@ export default function Home() {
 		</section>
 	);
 }
+
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+// 	const res = await fetch(`${server}/api/firestore/questions`);
+
+// 	const questions = await res.json();
+
+// 	return {
+// 		props: {
+// 			questions,
+// 		},
+// 	};
+// };

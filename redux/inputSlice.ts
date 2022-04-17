@@ -6,7 +6,14 @@ interface AnswerSlice {
 }
 
 interface Answer {
-	[key: string]: string;
+	Q: string;
+	A: string;
+}
+
+interface Answers {
+	id: number;
+	value: Answer;
+	// [key: number]: object;
 }
 
 const initialState: AnswerSlice = {
@@ -18,7 +25,7 @@ export const inputSlice = createSlice({
 	name: 'user-input',
 	initialState,
 	reducers: {
-		addAnswer: (state: any, action: PayloadAction<Answer>) => {
+		addAnswer: (state: any, action: PayloadAction<Answers>) => {
 			state.answers[action.payload.id] = action.payload.value;
 		},
 		addDate: (state: any, action: PayloadAction<number>) => {
