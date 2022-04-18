@@ -17,7 +17,7 @@ export default async function handler(req, res) {
 				stop: ['varfuu'],
 			})
 			.then((response) => {
-				res.status(201).json(response.data);
+				res.status(200).json(response.data);
 			})
 			.catch((e) => {
 				console.log(e);
