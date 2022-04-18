@@ -1,27 +1,13 @@
-import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addQuestions } from '../redux/questionsSlice';
-// import { useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-// import { openai } from '../OpenAI/OpenAi-config';
+import React, { useState } from 'react';
 import homeStyles from '../styles/Home.module.scss';
-import { server } from './api/config';
 
-export default function Home({ questions }: { questions: any }) {
+export default function Home() {
 	const [privacyNoticeState, setPrivacyNoticeState] = useState(homeStyles['closed']);
 	const [joinButton, setDisabled] = useState(homeStyles['disabled']);
 	const [error, setError] = useState('');
-	// const [questionsList, setQuestions] = useState({});
-	// const [answer, setAnswer] = useState('');
 
 	const router = useRouter();
-	// console.log(questions.questions);
-
-	// let navigate = useNavigate();
-	let dispatch = useDispatch();
-	// dispatch(addQuestions(questions));
 
 	const togglePrivacyNotice = () => {
 		privacyNoticeState === homeStyles['closed']
@@ -45,33 +31,6 @@ export default function Home({ questions }: { questions: any }) {
 			router.push('questions/1');
 		}
 	};
-
-	// const getAnswer = async (question) => {
-	// 	const gptResponse = await openai
-	// 		.complete({
-	// 			engine: 'davinci',
-	// 			prompt: question,
-	// 			maxTokens: 5,
-	// 			temperature: 0.9,
-	// 			topP: 1,
-	// 			presencePenalty: 0,
-	// 			frequencyPenalty: 0,
-	// 			bestOf: 1,
-	// 			n: 1,
-	// 			stream: false,
-	// 			stop: ['\n', 'testing'],
-	// 		})
-	// 		.then((value) => {
-	// 			setAnswer(value);
-	// 		});
-	// };
-
-	const store = useSelector((state) => state);
-	console.log(store);
-
-	// useEffect(() => {
-	// 	dispatch(addQuestions(questions));
-	// }, []);
 
 	return (
 		<section className='section-center'>
@@ -145,15 +104,3 @@ export default function Home({ questions }: { questions: any }) {
 		</section>
 	);
 }
-
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-// 	const res = await fetch(`${server}/api/firestore/questions`);
-
-// 	const questions = await res.json();
-
-// 	return {
-// 		props: {
-// 			questions,
-// 		},
-// 	};
-// };

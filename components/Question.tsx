@@ -42,7 +42,6 @@ export default function Question({
 	const handleSelect = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setSelectedOption(e.currentTarget.id);
 		setAnswer(e.currentTarget.value);
-		// dispatchData();
 		setAnswered(true);
 		setError('');
 	};
@@ -50,7 +49,6 @@ export default function Question({
 	const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault();
 		setAnswer(e.currentTarget.value);
-		// dispatchData();
 		setAnswered(true);
 		setError('');
 	};
@@ -92,8 +90,6 @@ export default function Question({
 	useEffect(() => {
 		dispatchData();
 	}, [answer]);
-
-	const store = useSelector((state) => state);
 
 	return (
 		<section className={`section-center ${QuestionStyles['question']}`}>

@@ -57,13 +57,15 @@ h5 {
 }
 
 button {
-	padding: 0.5rem 5rem;
+	padding-block: 0.5rem;
 	border-radius: 4px;
 	font-size: 1rem;
 	color: $clr_font_white;
 	background-color: $clr_secondary;
-	max-width: 275px;
-	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
 	text-align: center;
 }
 
