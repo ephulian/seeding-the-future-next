@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	env: {
-		OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+	async rewrites() {
+		return [
+			{
+				source: '/api/openai/manifesto',
+				destination: 'https://seeding-the-future-next.vercel.app/api/openai/manifesto',
+			},
+		];
 	},
 };
 
