@@ -1,9 +1,10 @@
 import { openai } from '../config/openai-config';
 
 export default async function handler(req, res) {
-	if (req.method === 'GET') {
-		res.status(200).json();
-	} else if (req.method === 'POST') {
+	// if (req.method === 'GET') {
+	// 	res.status(200).json();
+	// } else
+	if (req.method === 'POST') {
 		const request = req.body.question;
 
 		openai
@@ -17,10 +18,11 @@ export default async function handler(req, res) {
 				stop: ['varfuu'],
 			})
 			.then((response) => {
+				console.log(response.data);
 				res.status(200).json(response.data);
 			})
 			.catch((e) => {
-				console.log(e);
+				console.log('current error: ', e);
 			});
 	}
 }
