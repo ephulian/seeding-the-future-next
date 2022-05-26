@@ -19,23 +19,134 @@ export default function Finish() {
 
 	const store: any = useSelector((state) => state);
 	const answers = store.userInput.answers;
-	// console.log(store);
 
-	const getManifesto = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-		e.preventDefault();
-		setManifesto('Generating....');
-		axios
-			.post(`${server}/api/openai/manifesto`, {
-				question: `Q: ${answers[1].Q} \nA: ${answers[1].A}\n\nQ: ${answers[2].Q}\nA: ${answers[2].A}\n\nQ: ${answers[3].Q}\nA: ${answers[3].A}\n\nQ: ${answers[4].Q}\nA: ${answers[4].A}\n\nQ: ${answers[5].Q}\nA: ${answers[5].A}\n\nQ: ${answers[6].Q}\nA: ${answers[6].A}\n\nQ: Generate a manifesto?`,
-				// question:
-				// 	'Q: Use a word to describe the feelings of post-pandemic times?\n\nA: Anxious.\n\nQ: What truly matters to you in the future world?\n\nA: Peace.\n\nQ: Use a word to define the future city?\n\nA: Spectacular.\n\nQ: Who is the right partner if you were to start a business in 2030?\n\nA: A. Someone who is competitive, ambitious, and able to deal with uncertainty.\n\nQ: Imagine you are a fashion brand CEO selecting a co-creator, from different industry, to collaborate with on a social media platform. Who is the best person?\n\nA: B. Journalist or blogger elected by the audience by voting\n\nQ: The best society in the future is one where people? A: D. Have equal income and opportunities.\n\nQ: Generate a manifesto?',
-				// question: 'this is a test',
-			})
-			.then((res) => {
-				setAnswer(res.data.choices[0].text.substring(2));
-				setManifesto('Ready!');
-			})
-			.catch((err) => console.log(err));
+	const rui = ['concrete', 'business', 'product design', 'service', 'enterprise'];
+	const lee = [
+		'symbiosis with tech',
+		'brand positioning',
+		'customer culture',
+		'value diversity',
+		'storytelling',
+	];
+	const jenna = [
+		'future retail',
+		'customer experience',
+		'technology integration',
+		'innovation strategy',
+		'retail physical format',
+	];
+	const joyce = [
+		'foresight',
+		'entrepreneurial resilience',
+		'scenario thinking',
+		'creators',
+		'algorithm',
+	];
+	const erini = ['sustainability', 'ethical fashion', 'value crisis', 'heritage', 'clean luxury'];
+	const helen = ['fashion', 'luxury retail', 'hiring', 'human resource', 'organization'];
+	const liang = [
+		'chinoiserie',
+		'sustainable fashion',
+		'traditional culture',
+		'brand competencies',
+		'brand strategy',
+	];
+	const winnie = [
+		'electronics',
+		'special education',
+		'innovation method',
+		'technology',
+		'social policy',
+	];
+	const lotti = [
+		'fintech',
+		'marketing strategy',
+		'digitalisation',
+		'financial literacy',
+		'fintech marketing strategy',
+	];
+	const li = [
+		'experience thinking',
+		'customer loyalty',
+		'brand competitiveness',
+		'digital future',
+		'new retail',
+	];
+	const purv = ['foresight', 'regenartive design', 'systems change', 'future city', 'biomimicry'];
+	const lila = [
+		'system change',
+		'subtractive future',
+		'ecological justice',
+		'sustainable fashion',
+		'paradigm shift',
+	];
+	const jiamin = [
+		'second-hand',
+		'luxury',
+		'consumer motivation',
+		'conterfeit problem',
+		'NFT blockchain',
+	];
+
+	const _4A = lotti.concat(purv, jenna, lila);
+	const _4B = rui.concat(lila);
+	const _4C = joyce.concat(helen, winnie, jiamin);
+	const _4D = lee.concat(erini, li);
+
+	const _5A = erini.concat(liang);
+	const _5B = lila.concat(helen, jenna, lotti, winnie);
+	const _5C = joyce.concat(jiamin, lila);
+	const _5D = purv.concat(li);
+
+	const _6A = jiamin.concat(jenna);
+	const _6B = rui.concat(liang, li);
+	const _6C = joyce.concat(erini, lila, helen);
+	const _6D = lila.concat(lotti, lee, purv, winnie);
+
+	// console.log(answers);
+	// console.log(_4A);
+
+	const getRandom = (array: Array<String>) => {
+		const random = Math.floor(Math.random() * array.length);
+		return array[random];
+	};
+
+	const getRandomKeyword = (picked: any, question: Number) => {
+		switch (question) {
+			case 4:
+				switch (picked.A[0]) {
+					case 'A':
+						return getRandom(_4A);
+					case 'B':
+						return getRandom(_4B);
+					case 'C':
+						return getRandom(_4C);
+					case 'D':
+						return getRandom(_4D);
+				}
+			case 5:
+				switch (picked.A[0]) {
+					case 'A':
+						return getRandom(_5A);
+					case 'B':
+						return getRandom(_5B);
+					case 'C':
+						return getRandom(_5C);
+					case 'D':
+						return getRandom(_5D);
+				}
+			case 6:
+				switch (picked.A[0]) {
+					case 'A':
+						return getRandom(_6A);
+					case 'B':
+						return getRandom(_6B);
+					case 'C':
+						return getRandom(_6C);
+					case 'D':
+						return getRandom(_6D);
+				}
+		}
 	};
 
 	const saveToDB = async () => {
@@ -44,6 +155,26 @@ export default function Finish() {
 			manifesto: answer,
 			createdAt: now,
 		});
+	};
+
+	const getManifesto = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		e.preventDefault();
+		setManifesto('Generating....');
+		axios
+			.post(`${server}/api/openai/manifesto`, {
+				question: `Marv is a chatbot that reluctantly answers questions with sarcastic responses:\n\nYou: Make a sentence with ${
+					answers[1].A
+				}, ${answers[2].A}, ${answers[3].A}, ${getRandomKeyword(answers[4], 4)}, ${getRandomKeyword(
+					answers[5],
+					5
+				)} and ${getRandomKeyword(answers[6], 6)}\nMarv: `,
+			})
+			.then((res) => {
+				setAnswer(res.data.choices[0].text);
+				setManifesto('Ready!');
+				// saveToDB();
+			})
+			.catch((err) => console.log(err));
 	};
 
 	useEffect(() => {
