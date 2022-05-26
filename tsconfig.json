@@ -23,7 +23,8 @@
 		"pages/api/firestore/questions.js",
 		"pages/api/openai/manifest.js",
 		"pages/api/config/openai-config.ts",
-		"pages/visualisation.js"
+		"pages/visualisation.js",
+		"pages/data.jsx"
 	],
 	"exclude": ["node_modules"]
 }

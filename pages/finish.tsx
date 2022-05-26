@@ -9,6 +9,7 @@ import styles from '../styles/Final.module.scss';
 export default function Finish() {
 	const [answer, setAnswer] = useState<string>('');
 	const [manifesto, setManifesto] = useState<any>('Generate manifesto!');
+	const [keywords, setKeywords] = useState<any>([]);
 
 	const dispatch = useDispatch();
 	const router = useRouter();
@@ -154,20 +155,23 @@ export default function Finish() {
 			answers: { ...answers },
 			manifesto: answer,
 			createdAt: now,
+			keywords: keywords,
 		});
 	};
 
 	const getManifesto = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		e.preventDefault();
 		setManifesto('Generating....');
+
+		const word4 = getRandomKeyword(answers[4], 4);
+		const word5 = getRandomKeyword(answers[5], 5);
+		const word6 = getRandomKeyword(answers[6], 6);
+
+		setKeywords([word4, word5, word6]);
+
 		axios
 			.post(`${server}/api/openai/manifesto`, {
-				question: `Marv is a chatbot that reluctantly answers questions with sarcastic responses:\n\nYou: Make a sentence with ${
-					answers[1].A
-				}, ${answers[2].A}, ${answers[3].A}, ${getRandomKeyword(answers[4], 4)}, ${getRandomKeyword(
-					answers[5],
-					5
-				)} and ${getRandomKeyword(answers[6], 6)}\nMarv: `,
+				question: `Marv is a chatbot that reluctantly answers questions with sarcastic responses:\n\nYou: Make a sentence with ${answers[1].A}, ${answers[2].A}, ${answers[3].A}, ${word4}, ${word5} and ${word6}\nMarv: `,
 			})
 			.then((res) => {
 				setAnswer(res.data.choices[0].text);
