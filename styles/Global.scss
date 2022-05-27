@@ -57,16 +57,22 @@ h5 {
 }
 
 button {
-	padding-block: 0.5rem;
-	border-radius: 4px;
+	padding-block: 0.75rem;
+	// padding-inline: 0.45rem;
+	border-radius: 20px;
 	font-size: 1rem;
 	color: $clr_font_white;
-	background-color: $clr_secondary;
+	// background-color: $clr_secondary;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 200px;
 	text-align: center;
+	background-color: rgba(200, 200, 200, 0.35);
+	box-shadow: 1px 1px 1px black;
+	h3 {
+		font-size: 16px;
+	}
 }
 
 .disabled {

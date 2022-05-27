@@ -34,23 +34,27 @@ export default function Home() {
 
 	return (
 		<section className='section-center'>
-			<div className={homeStyles.home}>
-				<div className={homeStyles.card}>
+			<div className={homeStyles['home']}>
+				<div className={homeStyles['card']}>
 					<div className={homeStyles['logo-container']}>
-						<h3>logo</h3>
+						{/* <h3>logo</h3> */}
+						<img
+							src='https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/logo.png?alt=media&token=ab5e73ec-47d8-4102-be7a-06911d50be27'
+							alt='stf-logo'
+						/>
 					</div>
-					<div className='title'>
-						<h1>Seeding the Future</h1>
+					<div className={homeStyles['title']}>
+						<h1>Welcome!</h1>
 						<p>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, saepe sint minima
-							esse quae odit?
+							Hello, I am Cloudia2022. With your input, I use intelligent algorithm to create a
+							personalised manifesto just for you! Have fun, because the possibilities are endless!
 						</p>
 					</div>
 				</div>
 				<div className={homeStyles['button-container']}>
 					<div className={homeStyles['error']}>{error}</div>
 					<button className={joinButton} onClick={() => startQuestionaire()}>
-						<h3>Join</h3>
+						<h3>Cool, lets go!</h3>
 					</button>
 					<div className={homeStyles['privacy-notice']}>
 						<input

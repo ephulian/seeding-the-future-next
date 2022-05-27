@@ -92,24 +92,31 @@ export default function Question({
 	}, [answer]);
 
 	return (
-		<section className={`section-center ${QuestionStyles['question']}`}>
+		<section className={`section-center ${QuestionStyles['question-content']}`}>
 			<QuestionHeader count={id} />
-			<div className={QuestionStyles['question-content']}>
+			<div className={QuestionStyles['question']}>
 				<div className={QuestionStyles['question-container']}>
 					<h4>
-						{`Q${id}`}: <span>{question}</span>
+						{/* {`Q${id}`}: <span>{question}</span> */}
+						<span>{question}</span>
 					</h4>
 				</div>
-				<div className={QuestionStyles['answer-container']}>
-					{options
-						? options.map((option, key) => <OptionType oid={key} key={key} option={option} />)
-						: InputType}
-				</div>
-				<div className={QuestionStyles['button-container']}>
-					<div className={QuestionStyles['error']}>{error}</div>
-					<button className={isAnswered ? '' : 'disabled'} onClick={next}>
-						Next
-					</button>
+				<div className={QuestionStyles['answer-card']}>
+					<div className={QuestionStyles['answer-container']}>
+						{options
+							? options.map((option, key) => <OptionType oid={key} key={key} option={option} />)
+							: InputType}
+					</div>
+					<mask id='circle'>
+						<circle fill='white' cx='100' cy='100' r='100'></circle>
+						<circle fill='black' cx='86%' cy='86%' r='18'></circle>
+					</mask>
+					<div className={QuestionStyles['button-container']}>
+						<div className={QuestionStyles['error']}>{error}</div>
+						<button className={isAnswered ? '' : 'disabled'} onClick={next}>
+							Next
+						</button>
+					</div>
 				</div>
 			</div>
 		</section>

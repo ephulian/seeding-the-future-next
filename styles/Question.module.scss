@@ -4,47 +4,80 @@
 	height: 100%;
 	width: 100%;
 	flex-direction: column;
-	max-width: 450px;
+	// max-width: 450px;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	background: url('https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/background.png?alt=media&token=350207ed-aa23-43d9-9c0b-cbed575d5d68');
+	background-size: cover;
+	background-repeat: no-repeat;
 
-	.question-container {
-		padding: 0 1rem;
-		margin-top: 5rem;
-	}
+	.question {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 5rem;
+		flex-direction: column;
+		// border: 2px solid red;
+		height: 57.5%;
 
-	.answer-container {
-		width: 100%;
-		padding: 0 1rem;
-		.answer {
-			font-size: $fontsize_4;
-			padding: 0.25rem;
-			border: 2px solid $clr_font_gray;
-			width: 100%;
+		.question-container {
+			padding: 0 1rem;
+			// margin-top: 5rem;
 
-			&::placeholder {
-				color: $clr_font_gray;
+			h4 {
+				color: white;
+				text-align: center;
 			}
 		}
 
-		.single-option {
-			padding-top: 1.25rem;
-		}
-	}
+		.answer-card {
+			// border: 2px solid blue;
+			background: white;
+			margin-inline: 2rem;
+			padding: 2rem;
+			max-width: 550px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 225px;
+			border-radius: 20px;
 
-	.button-container {
-		display: flex;
-		height: 25%;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		gap: 1rem;
+			.answer-container {
+				width: 100%;
 
-		.error {
-			color: $clr_font_red;
-			height: 27px;
-			// position: absolute;
+				.answer {
+					font-size: $fontsize_4;
+					padding: 0.25rem;
+					border: 2px solid $clr_font_gray;
+					width: 100%;
+					border: none;
+					// border-bottom: transparent;
+
+					&::placeholder {
+						color: $clr_font_gray;
+						text-align: center;
+					}
+				}
+
+				.single-option {
+					padding-top: 1.25rem;
+				}
+			}
+
+			.button-container {
+				display: flex;
+				height: 25%;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				gap: 1rem;
+				margin-bottom: 15px;
+
+				.error {
+					color: $clr_font_red;
+					height: 27px;
+					// position: absolute;
+				}
+			}
 		}
 	}
 }
