@@ -62,13 +62,15 @@ button {
 	border-radius: 20px;
 	font-size: 1rem;
 	color: $clr_font_white;
+	// color: $clr_buttons;
 	// background-color: $clr_secondary;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 200px;
 	text-align: center;
-	background-color: rgba(200, 200, 200, 0.35);
+	// background-color: rgba(200, 200, 200, 0.35);
+	background-color: $clr_buttons;
 	box-shadow: 1px 1px 1px black;
 	h3 {
 		font-size: 16px;
@@ -77,6 +79,12 @@ button {
 
 .disabled {
 	background-color: $clr_unactive;
+	// color: $clr_buttons;
+	color: rgb(77, 77, 77);
+}
+
+input[type='text'] {
+	border-bottom: 1px solid $clr_buttons;
 }
 
 input[type='checkbox'] {

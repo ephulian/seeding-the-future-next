@@ -51,7 +51,7 @@ export default function Question({
 	const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault();
 		setAnswer(e.currentTarget.value);
-		setAnswered(true);
+		e.currentTarget.value ? setAnswered(true) : setAnswered(false);
 		setError('');
 		// options ?
 	};
@@ -82,6 +82,7 @@ export default function Question({
 	const InputType = (
 		<input
 			className={QuestionStyles['answer']}
+			style={{ borderBottom: isAnswered ? `2px solid #2893d8` : `2px solid #e4e4e4` }}
 			onChange={(e) => handleInput(e)}
 			id='answer'
 			placeholder={`Answer here...`}
@@ -112,7 +113,7 @@ export default function Question({
 					</h4>
 				</div>
 				<div
-					style={{ background: options ? 'none' : 'white' }}
+					style={{ background: options ? 'none' : 'white', height: options ? '300px' : '225px' }}
 					className={QuestionStyles['answer-card']}
 				>
 					<div className={QuestionStyles['answer-container']}>
