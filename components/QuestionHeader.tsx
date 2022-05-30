@@ -21,9 +21,7 @@ export default function QuestionHeader({ count }: { count: number }) {
 				<div
 					// style={{ display: count === 6 ? 'none' : 'block' }}
 					onClick={() => router.push(count + 1 <= 6 ? `/questions/${count + 1}` : '/finish')}
-					className={`${
-						count === 6 ? QuestionHeaderStyles['empty'] : QuestionHeaderStyles['arrow']
-					} ${QuestionHeaderStyles['right']}`}
+					className={`${QuestionHeaderStyles['empty']} ${QuestionHeaderStyles['right']}`}
 				></div>
 			</div>
 			<div className={QuestionHeaderStyles['title']}>

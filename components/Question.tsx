@@ -17,7 +17,7 @@ export default function Question({
 	nextPage: string;
 }) {
 	const [isAnswered, setAnswered] = useState(false);
-	const [error, setError] = useState('');
+	const [error, setError] = useState(' ');
 	const [selectedOption, setSelectedOption] = useState('');
 	const [answer, setAnswer] = useState('');
 
@@ -50,9 +50,16 @@ export default function Question({
 
 	const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
 		e.preventDefault();
-		setAnswer(e.currentTarget.value);
-		e.currentTarget.value ? setAnswered(true) : setAnswered(false);
-		setError('');
+		if (e.currentTarget.value.split(' ').length > 1) {
+			console.log('too long');
+			setError('Please use only a single word!');
+			setAnswer(e.currentTarget.value);
+			setAnswered(false);
+		} else {
+			setAnswer(e.currentTarget.value);
+			e.currentTarget.value ? setAnswered(true) : setAnswered(false);
+			setError('');
+		}
 		// options ?
 	};
 
