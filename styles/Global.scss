@@ -92,12 +92,17 @@ input[type='checkbox'] {
 }
 
 input[type='radio'] {
-	border: 2px solid $clr_unactive;
-	height: 15px;
-	width: 15px;
-	border-radius: 50%;
-	margin-bottom: -2px;
-	margin-right: 5px;
+	// border: 2px solid $clr_unactive;
+	// height: 15px;
+	// width: 15px;
+	// border-radius: 50%;
+	// margin-bottom: -2px;
+	// margin-right: 5px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
 
 	&:checked {
 		background-color: $clr_active;

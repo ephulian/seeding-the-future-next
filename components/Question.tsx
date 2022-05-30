@@ -42,8 +42,10 @@ export default function Question({
 	const handleSelect = (e: React.ChangeEvent<HTMLInputElement>): void => {
 		setSelectedOption(e.currentTarget.id);
 		setAnswer(e.currentTarget.value);
-		setAnswered(true);
 		setError('');
+		setAnswered(true);
+		console.log(isAnswered);
+		isAnswered ? router.push(nextPage) : setError('You must answer to continue!');
 	};
 
 	const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
@@ -51,20 +53,28 @@ export default function Question({
 		setAnswer(e.currentTarget.value);
 		setAnswered(true);
 		setError('');
+		// options ?
 	};
 
 	const OptionType = ({ oid, option }: { oid: any; option: any }) => {
 		return (
-			<div className={QuestionStyles['single-option']}>
+			<div
+				className={`${QuestionStyles['single-option']} ${
+					isOptionSelected(`option_${oid}`) ? QuestionStyles['option-selected'] : ''
+				}`}
+			>
 				<input
 					type='radio'
 					id={`option_${oid}`}
 					name={`answer_${id}`}
 					value={option}
+					// className={}
 					checked={isOptionSelected(`option_${oid}`)}
 					onChange={handleSelect}
 				/>
-				<label htmlFor={`option_${oid}`}>{option}</label>
+				<label className={QuestionStyles['option-label']} htmlFor={`option_${oid}`}>
+					{option}
+				</label>
 			</div>
 		);
 	};
@@ -84,7 +94,7 @@ export default function Question({
 	useEffect(() => {
 		setAnswer('');
 		setSelectedOption('');
-		setAnswered(false);
+		options ? setAnswered(true) : setAnswered(false);
 	}, [id]);
 
 	useEffect(() => {
@@ -101,19 +111,26 @@ export default function Question({
 						<span>{question}</span>
 					</h4>
 				</div>
-				<div className={QuestionStyles['answer-card']}>
+				<div
+					style={{ background: options ? 'none' : 'white' }}
+					className={QuestionStyles['answer-card']}
+				>
 					<div className={QuestionStyles['answer-container']}>
 						{options
 							? options.map((option, key) => <OptionType oid={key} key={key} option={option} />)
 							: InputType}
 					</div>
-					<mask id='circle'>
+					{/* <mask id='circle'>
 						<circle fill='white' cx='100' cy='100' r='100'></circle>
 						<circle fill='black' cx='86%' cy='86%' r='18'></circle>
-					</mask>
+					</mask> */}
 					<div className={QuestionStyles['button-container']}>
 						<div className={QuestionStyles['error']}>{error}</div>
-						<button className={isAnswered ? '' : 'disabled'} onClick={next}>
+						<button
+							style={{ display: options ? 'none' : 'block' }}
+							className={isAnswered ? '' : 'disabled'}
+							onClick={next}
+						>
 							Next
 						</button>
 					</div>

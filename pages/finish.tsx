@@ -21,73 +21,19 @@ export default function Finish() {
 	const store: any = useSelector((state) => state);
 	const answers = store.userInput.answers;
 
-	const rui = ['concrete', 'business', 'product design', 'service', 'enterprise'];
-	const lee = [
-		'symbiosis with tech',
-		'brand positioning',
-		'customer culture',
-		'value diversity',
-		'storytelling',
-	];
-	const jenna = [
-		'future retail',
-		'customer experience',
-		'technology integration',
-		'innovation strategy',
-		'retail physical format',
-	];
-	const joyce = [
-		'foresight',
-		'entrepreneurial resilience',
-		'scenario thinking',
-		'creators',
-		'algorithm',
-	];
-	const erini = ['sustainability', 'ethical fashion', 'value crisis', 'heritage', 'clean luxury'];
-	const helen = ['fashion', 'luxury retail', 'hiring', 'human resource', 'organization'];
-	const liang = [
-		'chinoiserie',
-		'sustainable fashion',
-		'traditional culture',
-		'brand competencies',
-		'brand strategy',
-	];
-	const winnie = [
-		'electronics',
-		'special education',
-		'innovation method',
-		'technology',
-		'social policy',
-	];
-	const lotti = [
-		'fintech',
-		'marketing strategy',
-		'digitalisation',
-		'financial literacy',
-		'fintech marketing strategy',
-	];
-	const li = [
-		'experience thinking',
-		'customer loyalty',
-		'brand competitiveness',
-		'digital future',
-		'new retail',
-	];
-	const purv = ['foresight', 'regenartive design', 'systems change', 'future city', 'biomimicry'];
-	const lila = [
-		'system change',
-		'subtractive future',
-		'ecological justice',
-		'sustainable fashion',
-		'paradigm shift',
-	];
-	const jiamin = [
-		'second-hand',
-		'luxury',
-		'consumer motivation',
-		'conterfeit problem',
-		'NFT blockchain',
-	];
+	const rui = ['concrete', 'business', 'office', 'service', 'enterprise'];
+	const lee = ['symbiosis', 'branding', 'culture', 'value', 'storytelling'];
+	const jenna = ['retail', 'technology', 'enterprise', 'behaviour'];
+	const joyce = ['foresight', 'entrepreneur', 'scenario', 'creators', 'participation'];
+	const erini = ['sustainability', 'value', 'heritage', 'luxury'];
+	const helen = ['fashion', 'hiring', 'recruitment', 'organization'];
+	const liang = ['chinoiserie', 'traditional', 'culture'];
+	const winnie = ['electronics', 'education', 'ethics', 'specialised'];
+	const lotti = ['fintech', 'marketing', 'digitalisation', 'financial', 'strategy'];
+	const li = ['experience', 'loyalty', 'brand', 'digital'];
+	const purv = ['foresight', 'regenartive', 'complexity', 'future', 'biomimicry'];
+	const lila = ['system', 'restorative', 'postgrowth', 'fashion', 'paradigm'];
+	const jiamin = ['second-hand', 'luxury', 'motivation', 'conterfeit', 'blockchain'];
 
 	const _4A = lotti.concat(purv, jenna, lila);
 	const _4B = rui.concat(lila);

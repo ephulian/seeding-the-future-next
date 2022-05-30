@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 import QuestionHeaderStyles from '../styles/QuestionHeader.module.scss';
 
 export default function QuestionHeader({ count }: { count: number }) {
 	const router = useRouter();
+	const [show, setShow] = useState();
 
 	return (
 		<header className={QuestionHeaderStyles['question-header']}>
@@ -18,8 +19,11 @@ export default function QuestionHeader({ count }: { count: number }) {
 					alt='stf-logo'
 				/>
 				<div
+					// style={{ display: count === 6 ? 'none' : 'block' }}
 					onClick={() => router.push(count + 1 <= 6 ? `/questions/${count + 1}` : '/finish')}
-					className={`${QuestionHeaderStyles['arrow']} ${QuestionHeaderStyles['right']}`}
+					className={`${
+						count === 6 ? QuestionHeaderStyles['empty'] : QuestionHeaderStyles['arrow']
+					} ${QuestionHeaderStyles['right']}`}
 				></div>
 			</div>
 			<div className={QuestionHeaderStyles['title']}>
