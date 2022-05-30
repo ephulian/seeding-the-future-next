@@ -14,6 +14,9 @@ body {
 
 		main {
 			height: 100%;
+			background: url('https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/background.png?alt=media&token=350207ed-aa23-43d9-9c0b-cbed575d5d68');
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 
 		.section-center {
@@ -24,6 +27,7 @@ body {
 			align-items: center;
 			justify-content: flex-end;
 			flex-direction: column;
+			background: none;
 		}
 	}
 }

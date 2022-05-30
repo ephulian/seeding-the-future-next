@@ -120,7 +120,11 @@ export default function Question({
 					</h4>
 				</div>
 				<div
-					style={{ background: options ? 'none' : 'white', height: options ? '300px' : '225px' }}
+					style={{
+						background: options ? 'none' : 'white',
+						height: options ? '300px' : '225px',
+						padding: options ? '0' : '2rem',
+					}}
 					className={QuestionStyles['answer-card']}
 				>
 					<div className={QuestionStyles['answer-container']}>

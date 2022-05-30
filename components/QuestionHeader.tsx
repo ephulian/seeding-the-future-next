@@ -10,6 +10,7 @@ export default function QuestionHeader({ count }: { count: number }) {
 		<header className={QuestionHeaderStyles['question-header']}>
 			<div className={QuestionHeaderStyles['logo-container']}>
 				<div
+					style={{ display: count ? 'block' : 'none' }}
 					onClick={() => router.push(count - 1 > 0 ? `/questions/${count - 1}` : '/')}
 					className={`${QuestionHeaderStyles['arrow']} ${QuestionHeaderStyles['left']}`}
 				></div>
@@ -26,7 +27,7 @@ export default function QuestionHeader({ count }: { count: number }) {
 			</div>
 			<div className={QuestionHeaderStyles['title']}>
 				{/* <h4>Seeding the Future </h4> */}
-				<h4>QUESTION {count} OF 6</h4>
+				{count ? <h4>QUESTION {count} OF 6</h4> : ''}
 			</div>
 		</header>
 	);

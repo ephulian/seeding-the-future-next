@@ -21,3 +21,10 @@ $fontsize_2: 28px;
 $fontsize_3: 22px;
 $fontsize_4: 18px;
 $fontsize_5: 14px;
+
+// anim
+$dark-purple: hsl(285, 86%, 4%);
+$neon-blue: hsl(190, 100%, 75%);
+$neon-pink: hsl(303, 100%, 73%);
+$size: 10;
+$unit: calc((var(--size) / 100) * 1vmin);
