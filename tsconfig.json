@@ -24,7 +24,10 @@
 		"pages/api/openai/manifest.js",
 		"pages/api/config/openai-config.ts",
 		"pages/visualisation.js",
-		"pages/data.jsx"
+		"pages/data.jsx",
+		"components/Animation.jsx",
+		"pages/finish.jsx",
+		"pages/finish.jsx"
 	],
 	"exclude": ["node_modules"]
 }
