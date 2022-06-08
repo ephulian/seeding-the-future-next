@@ -29,13 +29,13 @@ export default function Finish() {
 	const joyce = ['foresight', 'entrepreneur', 'scenario', 'creators', 'participation'];
 	const erini = ['sustainability', 'value', 'heritage', 'luxury'];
 	const helen = ['fashion', 'hiring', 'recruitment', 'organization'];
-	const liang = ['chinoiserie', 'traditional', 'culture'];
+	const liang = ['traditional', 'culture'];
 	const winnie = ['electronics', 'education', 'ethics', 'specialised'];
 	const lotti = ['fintech', 'marketing', 'digitalisation', 'financial', 'strategy'];
 	const li = ['experience', 'loyalty', 'brand', 'digital'];
 	const purv = ['foresight', 'regenartive', 'complexity', 'future', 'biomimicry'];
-	const lila = ['system', 'restorative', 'postgrowth', 'fashion', 'paradigm'];
-	const jiamin = ['second-hand', 'luxury', 'motivation', 'conterfeit', 'blockchain'];
+	const lila = ['system', 'restorative', 'postgrowth', 'paradigm'];
+	const jiamin = ['second-hand', 'motivation', 'conterfeit', 'blockchain'];
 
 	const _4A = lotti.concat(purv, jenna, lila);
 	const _4B = rui.concat(lila);
