@@ -116,7 +116,7 @@ export default function Question({
 				<div className={QuestionStyles['question-container']}>
 					<h4>
 						{/* {`Q${id}`}: <span>{question}</span> */}
-						<span style={{ fontWeight: '600' }}>{question}</span>
+						<span style={{ fontWeight: '600', fontSize: '1rem' }}>{question}</span>
 					</h4>
 				</div>
 				<div
