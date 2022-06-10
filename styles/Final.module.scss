@@ -31,10 +31,12 @@
 		color: black;
 
 		.lds-roller {
+			margin-inline: auto;
+			padding-left: 10px;
 			display: inline-block;
 			position: relative;
-			width: 80px;
-			height: 80px;
+			width: 90px;
+			height: 90px;
 			margin-block: 50px;
 		}
 		.lds-roller div {
