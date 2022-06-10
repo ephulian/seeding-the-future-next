@@ -2,7 +2,7 @@
 @import './root/Variables.scss';
 
 body {
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -15,6 +15,7 @@ body {
 
 		main {
 			height: 100%;
+			width: 100%;
 			background: url('https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/background.png?alt=media&token=350207ed-aa23-43d9-9c0b-cbed575d5d68');
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -22,7 +23,7 @@ body {
 
 		.section-center {
 			height: 100%;
-			width: 100vw;
+			width: 100%;
 			z-index: 1;
 			display: flex;
 			align-items: center;
