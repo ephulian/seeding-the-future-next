@@ -41,7 +41,7 @@ export default function Home() {
 						<div className={homeStyles['logo-container']}>
 							{/* <h3>logo</h3> */}
 							<img
-								src='https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/logo.png?alt=media&token=ab5e73ec-47d8-4102-be7a-06911d50be27'
+								src='https://firebasestorage.googleapis.com/v0/b/cloudia-ai.appspot.com/o/logo.png?alt=media&token=6eaf6e62-6fa9-426e-a5ca-1531b98cbf4e'
 								alt='stf-logo'
 							/>
 						</div>

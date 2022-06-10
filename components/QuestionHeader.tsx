@@ -16,7 +16,7 @@ export default function QuestionHeader({ count }: { count: number }) {
 				></div>
 				<img
 					onClick={() => router.push('/')}
-					src='https://firebasestorage.googleapis.com/v0/b/cloudia-ai.appspot.com/o/logo.png?alt=media&token=95559975-6ddf-4e5f-a779-8a7e2c526db2'
+					src='https://firebasestorage.googleapis.com/v0/b/cloudia-ai.appspot.com/o/logo.png?alt=media&token=6eaf6e62-6fa9-426e-a5ca-1531b98cbf4e'
 					alt='stf-logo'
 				/>
 				<div
