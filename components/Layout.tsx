@@ -8,11 +8,6 @@ import { useEffect, useRef } from 'react';
 export const Layout = ({ children }: { children: React.ReactNode }) => {
 	const main: any = useRef();
 
-	useEffect(() => {
-		// main.current.style.border = '1px solid red';
-		main.current.style.height = window.innerHeight;
-	});
-
 	return (
 		<>
 			{/* <Meta /> */}
