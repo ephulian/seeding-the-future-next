@@ -6,13 +6,6 @@ import Head from 'next/head';
 import { useEffect, useRef } from 'react';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
-	const main: any = useRef();
-
-	useEffect(() => {
-		// main.current.style.border = '1px solid red';
-		document.body.style.height = window.innerHeight + 'px';
-	});
-
 	return (
 		<>
 			{/* <Meta /> */}
@@ -26,7 +19,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 				<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
 			</Head>
 			{/* <main>{children}</main> */}
-			<main ref={main}>{children}</main>
+			<main>{children}</main>
 		</>
 	);
 };
