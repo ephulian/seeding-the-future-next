@@ -248,6 +248,7 @@ export default function Finish() {
 					{manifesto !== 'Generate your unique future manifesto!' &&
 					manifesto !== 'Generating....' ? (
 						<button
+							disabled={NFT === 'Yes' ? true : false}
 							style={{
 								marginTop: '-25px',
 								backgroundColor: NFT === 'Yes' ? `rgba(200, 200, 200, 0.63)` : `#2893d8`,
