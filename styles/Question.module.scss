@@ -7,23 +7,17 @@
 	// max-width: 450px;
 	display: flex;
 	justify-content: space-between;
-	// background: url('https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/background.png?alt=media&token=350207ed-aa23-43d9-9c0b-cbed575d5d68');
-	// background-size: cover;
-	// background-repeat: no-repeat;
 
 	.question {
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+		padding-top: 1rem;
 		margin-bottom: 5rem;
-		gap: 4rem;
-		flex-direction: column;
+		grid-template-rows: 40% 60%;
 		width: 100%;
-		// border: 2px solid red;
 		height: 57.5%;
 
 		.question-container {
 			padding: 0 1rem;
-			// margin-top: 5rem;
 
 			h4 {
 				color: white;
@@ -32,8 +26,6 @@
 		}
 
 		.answer-card {
-			// border: 2px solid blue;
-			background: white;
 			margin-inline: auto;
 			// padding: 2rem;
 			padding-top: 2rem;

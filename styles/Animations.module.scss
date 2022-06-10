@@ -9,14 +9,14 @@
 	position: relative;
 	left: 0;
 	margin-top: 15px;
-	margin-bottom: -15px;
+	margin-bottom: -5px;
 	max-height: 175px;
-	background-color: rgba(200, 200, 200, 0.63);
+	// background-color: rgba(200, 200, 200, 0.63);
 	border-radius: 10px;
 
 	.anim {
 		border-radius: 10px;
-		// position: absolute;
+		position: relative;
 		width: 100%;
 		// min-width: 275px;
 		height: 100%;
@@ -26,7 +26,6 @@
 		background-image: url('https://firebasestorage.googleapis.com/v0/b/cloudia-ai.appspot.com/o/background.png?alt=media&token=ad38193f-5db9-41e1-86fe-d2f8d0c776d8');
 		background-repeat: no-repeat;
 		background-size: cover;
-		scale: 0.75;
 		background-position: 50%;
 		display: flex;
 		justify-content: center;

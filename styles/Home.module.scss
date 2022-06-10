@@ -9,14 +9,9 @@
 	flex-direction: column;
 	text-align: center;
 	z-index: 1;
-	// position: relative;
 
 	.card {
-		// background: $clr_gradient;
-		// background: url('https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/background.png?alt=media&token=350207ed-aa23-43d9-9c0b-cbed575d5d68');
-		// background-size: cover;
-		// background-repeat: no-repeat;
-		height: 100vh;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -110,7 +105,7 @@
 
 .privacy-notice-container {
 	position: absolute;
-	height: 100vh;
+	height: 100%;
 	width: auto;
 	display: flex;
 	align-items: center;

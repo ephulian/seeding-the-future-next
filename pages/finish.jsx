@@ -208,7 +208,7 @@ export default function Finish() {
 						<br />
 						<br />
 
-						{answer ? `"${answer.substring(2)}"` : `${manifesto}`}
+						<p>{answer ? `"${answer.substring(2)}"` : `${manifesto}`}</p>
 					</h4>
 					{manifesto !== `Generate your unique future manifesto!` ? null : (
 						<p style={{ textAling: 'start', color: 'rgb(85, 85, 85)' }}>
@@ -250,7 +250,8 @@ export default function Finish() {
 						<button
 							disabled={NFT === 'Yes' ? true : false}
 							style={{
-								marginTop: '-25px',
+								marginTop: '-20px',
+								marginBottom: '15px',
 								backgroundColor: NFT === 'Yes' ? `rgba(200, 200, 200, 0.63)` : `#2893d8`,
 							}}
 							onClick={(_) => {

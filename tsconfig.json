@@ -27,7 +27,10 @@
 		"pages/data.jsx",
 		"components/Animation.jsx",
 		"pages/finish.jsx",
-		"pages/finish.jsx"
+		"pages/finish.jsx",
+		"components/Layout.jsx",
+		"components/Layout.jsx",
+		"components/Layout.jsx"
 	],
 	"exclude": ["node_modules"]
 }
