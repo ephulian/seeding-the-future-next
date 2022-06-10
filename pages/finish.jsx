@@ -11,6 +11,7 @@ import Animation from '../components/Animation';
 export default function Finish() {
 	const [answer, setAnswer] = useState();
 	const [manifesto, setManifesto] = useState('Generate your unique future manifesto!');
+	// const [manifesto, setManifesto] = useState('Generating...');
 	const [keywords, setKeywords] = useState([]);
 	const [displayKeywords, setDisplayKeywords] = useState('');
 	const [running, setRunning] = useState(false);
@@ -175,17 +176,59 @@ export default function Finish() {
 					{/* <Anim /> */}
 					{/* {manifesto === 'Ready!' ? <Anim /> : ''} */}
 					{running ? <Animation words={displayKeywords} /> : null}
-					<h4 style={{ borderTop: ready ? '1px solid white' : null }}>
+					<h4
+						style={{
+							borderTop:
+								manifesto !== `Generate your unique future manifesto!` &&
+								manifesto !== 'Generating....'
+									? '1px solid #2893d8'
+									: null,
+							textAlign:
+								manifesto !== `Generate your unique future manifesto!` ? 'start' : 'center',
+							fontWeight:
+								manifesto !== `Generate your unique future manifesto!` &&
+								manifesto !== 'Generating....'
+									? '300'
+									: '600',
+							fontSize: manifesto !== `Generate your unique future manifesto!` ? '1rem' : '1.5rem',
+						}}
+					>
+						{manifesto === 'Generating....' ? (
+							<div className={styles['lds-roller']}>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+						) : null}
+						<br />
+						<br />
+
 						{answer ? `"${answer.substring(2)}"` : `${manifesto}`}
 					</h4>
+					{manifesto !== `Generate your unique future manifesto!` ? null : (
+						<p style={{ textAling: 'start', color: 'rgb(85, 85, 85)' }}>
+							We’ve linked your input with GPT-3 Algorithm engine. It’s super cool to combine your
+							thought and AI, and see how it will lead you to an unique future!
+						</p>
+					)}
 					<dialog ref={modal}>
 						<div className={styles['modal-card-container']}>
 							<div className={styles['modal-card']}>
 								<h3>Cloudia 2022 NFT Club</h3>
 								<p>
+									<br />
 									We are inviting you to participate in our NFT project! By pressing ‘YES’ means you
 									allow your personalized manifesto to be minted as a unique NFT on POAP*. Feel free
 									to collect your own NFT and create a blockchain wallet today at our service desk.
+									<br />
+									<br />
+								</p>
+								<p className={styles['poap']}>
 									*POAP is a gift from an issuer to collectors APP, in celebration of a special
 									shared memory.By minting these memories to the blockchain, collectors build a rich
 									tapestry of tokenized experiences which unlock a world of possibilities.
@@ -215,12 +258,13 @@ export default function Finish() {
 						>
 							{NFT === 'Yes' ? 'Joined!' : 'Join NFT'}
 						</button>
-					) : (
-						// <button style={{ marginTop: '-25px' }} onClick={(_) => router.push('/')}>
-						// 	Back to Home
-						// </button>
+					) : // <button style={{ marginTop: '-25px' }} onClick={(_) => router.push('/')}>
+					// 	Back to Home
+					// </button>
+
+					manifesto !== 'Generating....' ? (
 						<button onClick={(e) => getManifesto(e)}>Go!</button>
-					)}
+					) : null}
 				</div>
 			</div>
 		</div>

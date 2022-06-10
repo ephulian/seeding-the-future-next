@@ -48,9 +48,12 @@ export default function Home() {
 						<div className={homeStyles['title']}>
 							<h1>Welcome!</h1>
 							<p>
-								Hello, I am Cloudia2022. With your input, I use intelligent algorithm to create a
-								personalised manifesto just for you! Have fun, because the possibilities are
-								endless!
+								I am a digital machine, functioning on algorithmic intelligence to bring you bespoke
+								manifestos by understanding the information you provide me. Through every individual
+								manifesto, a collective visual landscape is curated which you will be able to view
+								and enjoy. <br />
+								<br />
+								Let's explore and play, future possibilities are endless.
 							</p>
 						</div>
 					</div>
@@ -82,30 +85,12 @@ export default function Home() {
 							<h3 className={homeStyles['privacy-notice__title']}>Privacy Notice</h3>
 							<div onClick={() => togglePrivacyNotice()} className={homeStyles['cross']}></div>
 						</div>
-						<br />
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur modi, sint assumenda
-						temporibus labore id fugiat fuga, exercitationem sequi optio molestias odio dolorum
-						porro amet suscipit reiciendis tempore magnam corporis autem, qui repellendus laborum
-						cupiditate soluta minima. Quasi minus accusantium doloremque voluptate nihil labore
-						asperiores sint voluptates ullam autem unde dicta officia porro quam, nulla enim, aut
-						animi! Quis doloribus autem numquam beatae aut. Tenetur! Lorem ipsum dolor sit amet
-						consectetur, adipisicing elit. Pariatur modi, sint assumenda temporibus labore id fugiat
-						fuga, exercitationem sequi optio molestias odio dolorum porro amet suscipit reiciendis
-						tempore magnam corporis autem, qui repellendus laborum cupiditate soluta minima. Quasi
-						minus accusantium doloremque voluptate nihil labore asperiores sint voluptates ullam
-						autem unde dicta officia porro quam, nulla enim, aut animi! Quis doloribus autem numquam
-						beatae aut. Tenetur! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
-						modi, sint assumenda temporibus labore id fugiat fuga, exercitationem sequi optio
-						molestias odio dolorum porro amet suscipit reiciendis tempore magnam corporis autem, qui
-						repellendus laborum cupiditate soluta minima. Quasi minus accusantium doloremque
-						voluptate nihil labore asperiores sint voluptates ullam autem unde dicta officia porro
-						quam, nulla enim, aut animi! Quis doloribus autem numquam beatae aut. Tenetur! Lorem
-						ipsum dolor sit amet consectetur, adipisicing elit. Pariatur modi, sint assumenda
-						temporibus labore id fugiat fuga, exercitationem sequi optio molestias odio dolorum
-						porro amet suscipit reiciendis tempore magnam corporis autem, qui repellendus laborum
-						cupiditate soluta minima. Quasi minus accusantium doloremque voluptate nihil labore
-						asperiores sint voluptates ullam autem unde dicta officia porro quam, nulla enim, aut
-						animi! Quis doloribus autem numquam beatae aut. Tenetur!
+						<br />I confirm that I am aware of the nature of this project, and had an opportunity to
+						ask questions about the exhibition and how my information will be used. I understand the
+						purpose of the activity and what my participation involves. I agree to take part in the
+						MAIM Graduate Showcase 2022 – Collective Futurithm project and for the input I provide
+						to be shared with the University of the Arts London. I give permission for this platform
+						to share my information for the purpose of this activity amongst the MAIM 2022 cohort.
 					</div>
 				</div>
 			</section>
