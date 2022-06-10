@@ -14,7 +14,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 				<link
 					rel='icon'
 					type='image/ico'
-					href='https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/logo.png?alt=media&token=ab5e73ec-47d8-4102-be7a-06911d50be27'
+					href='https://firebasestorage.googleapis.com/v0/b/cloudia-ai.appspot.com/o/logo.png?alt=media&token=95559975-6ddf-4e5f-a779-8a7e2c526db2'
 				/>
 			</Head>
 			{/* <main>{children}</main> */}
