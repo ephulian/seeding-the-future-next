@@ -10,7 +10,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 
 	useEffect(() => {
 		// main.current.style.border = '1px solid red';
-		main.current.style.height = window.innerHeight + 'px';
+		document.body.style.height = window.innerHeight + 'px';
 	});
 
 	return (
