@@ -156,7 +156,7 @@ export default function Finish() {
 	const decline = (e) => {
 		setNFT('No');
 		modal.current.close();
-		saveNFT(e);
+		// saveNFT(e);
 	};
 
 	console.log('NFT:', NFT);
