@@ -4,8 +4,11 @@
 
 import Head from 'next/head';
 import { useEffect, useRef } from 'react';
+import { use100vh } from 'react-div-100vh';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
+	const height = use100vh();
+
 	return (
 		<>
 			{/* <Meta /> */}
@@ -18,7 +21,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 				/>
 			</Head>
 			{/* <main>{children}</main> */}
-			<main>{children}</main>
+			<main style={{ height: height ? height : '100%' }}>{children}</main>
 		</>
 	);
 };
