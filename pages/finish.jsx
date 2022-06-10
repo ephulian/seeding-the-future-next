@@ -14,6 +14,7 @@ export default function Finish() {
 	const [keywords, setKeywords] = useState([]);
 	const [displayKeywords, setDisplayKeywords] = useState('');
 	const [running, setRunning] = useState(false);
+	const [ready, setReady] = useState(false);
 	const [NFT, setNFT] = useState('No');
 
 	const dispatch = useDispatch();
@@ -118,6 +119,7 @@ export default function Finish() {
 		axios.post(`${server}/api/firestore/nft`, {
 			manifesto: answer,
 			nft: NFT,
+			createdAt: now,
 		});
 	};
 
@@ -139,6 +141,7 @@ export default function Finish() {
 			.then((res) => {
 				setAnswer(res.data.choices[0].text);
 				setManifesto('Ready!');
+				setReady(true);
 			})
 			.catch((err) => console.log(err));
 	};
@@ -172,7 +175,9 @@ export default function Finish() {
 					{/* <Anim /> */}
 					{/* {manifesto === 'Ready!' ? <Anim /> : ''} */}
 					{running ? <Animation words={displayKeywords} /> : null}
-					<h4>{answer ? `"${answer.substring(2)}"` : `${manifesto}`}</h4>
+					<h4 style={{ borderTop: ready ? '1px solid white' : null }}>
+						{answer ? `"${answer.substring(2)}"` : `${manifesto}`}
+					</h4>
 					<dialog ref={modal}>
 						<div className={styles['modal-card-container']}>
 							<div className={styles['modal-card']}>
@@ -187,8 +192,11 @@ export default function Finish() {
 								</p>
 								<div className={styles['buttons-container']}>
 									<button onClick={(e) => accept(e)}>Yes</button>
-									<button style={{ background: 'rgb(77, 77, 77)' }} onClick={(e) => decline(e)}>
-										Decline
+									<button
+										style={{ background: 'rgba(200, 200, 200, 0.63)' }}
+										onClick={(e) => decline(e)}
+									>
+										Later
 									</button>
 								</div>
 							</div>
@@ -197,12 +205,15 @@ export default function Finish() {
 					{manifesto !== 'Generate your unique future manifesto!' &&
 					manifesto !== 'Generating....' ? (
 						<button
-							style={{ marginTop: '-25px' }}
+							style={{
+								marginTop: '-25px',
+								backgroundColor: NFT === 'Yes' ? `rgba(200, 200, 200, 0.63)` : `#2893d8`,
+							}}
 							onClick={(_) => {
 								modal.current.showModal();
 							}}
 						>
-							Join NFT
+							{NFT === 'Yes' ? 'Joined!' : 'Join NFT'}
 						</button>
 					) : (
 						// <button style={{ marginTop: '-25px' }} onClick={(_) => router.push('/')}>
