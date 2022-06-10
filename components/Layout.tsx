@@ -23,6 +23,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 					type='image/ico'
 					href='https://firebasestorage.googleapis.com/v0/b/stf-db.appspot.com/o/logo.png?alt=media&token=ab5e73ec-47d8-4102-be7a-06911d50be27'
 				/>
+				<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
 			</Head>
 			{/* <main>{children}</main> */}
 			<main ref={main}>{children}</main>
