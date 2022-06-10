@@ -58,10 +58,11 @@ export default function Home() {
 						</div>
 					</div>
 					<div className={homeStyles['button-container']}>
-						<div className={homeStyles['error']}>{error}</div>
 						<button className={joinButton} onClick={() => startQuestionaire()}>
 							<h3>Cool, lets go!</h3>
 						</button>
+						<div className={homeStyles['error']}>{error}</div>
+
 						<div className={homeStyles['privacy-notice']}>
 							<input
 								onChange={() => enableButton()}
