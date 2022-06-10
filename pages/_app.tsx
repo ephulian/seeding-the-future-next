@@ -6,15 +6,6 @@ import { Provider } from 'react-redux';
 import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
-	const resetHeight = () => {
-		document.body.style.height = window.innerHeight + 'px';
-	};
-
-	useEffect(() => {
-		window.addEventListener('resize', resetHeight);
-		resetHeight();
-	}, []);
-
 	return (
 		<Provider store={store}>
 			<Layout>
