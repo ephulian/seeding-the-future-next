@@ -27,11 +27,11 @@ async function handler(req, res) {
 		openai
 			.createCompletion('text-davinci-002', {
 				prompt: request,
-				temperature: 0.5,
-				max_tokens: 75,
-				top_p: 0.3,
-				frequency_penalty: 0.5,
-				presence_penalty: 0,
+				temperature: 1,
+				max_tokens: 100,
+				top_p: 1,
+				frequency_penalty: 1,
+				presence_penalty: 0.5,
 				stop: ['varfuu'],
 			})
 			.then((response) => {
