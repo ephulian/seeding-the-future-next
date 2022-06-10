@@ -3,8 +3,8 @@
 
 body {
 	width: 100vw;
-	// min-height: -webkit-fill-available;
-	// height: 100vh;
+	min-height: -webkit-fill-available;
+	height: 100vh;
 	// min-height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -23,17 +23,16 @@ body {
 			background-size: cover;
 			background-repeat: no-repeat;
 			overflow: hidden;
-
-			.section-center {
-				height: 100%;
-				width: 100%;
-				z-index: 1;
-				display: flex;
-				align-items: center;
-				justify-content: flex-end;
-				flex-direction: column;
-				background: none;
-			}
+		}
+		.section-center {
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			flex-direction: column;
+			background: none;
 		}
 	}
 }
