@@ -53,7 +53,7 @@ export default function Home() {
 								manifesto, a collective visual landscape is curated which you will be able to view
 								and enjoy. <br />
 								<br />
-								Let's explore and play, future possibilities are endless.
+								Let us explore and play, future possibilities are endless.
 							</p>
 						</div>
 					</div>
